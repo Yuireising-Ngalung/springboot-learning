@@ -23,4 +23,14 @@ public class EmployeeController {
     public List<EmployeeModal> addEmployee(@RequestBody EmployeeModal employeeModal){
         return employeeService.addEmployee(employeeModal);
     }
+
+    @PutMapping("employees/updateEmployee/{id}")
+    public String updateEmployee(@PathVariable int id, @RequestBody EmployeeModal employeeModal){
+        return employeeService.updateEmployee(id, employeeModal);
+    }
+
+    @DeleteMapping("employees/deleteEmployee/{id}")
+    public String deleteEmployee(@PathVariable int id){
+        return employeeService.deleteEmployee(id);
+    }
 }

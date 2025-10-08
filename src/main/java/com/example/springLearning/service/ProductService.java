@@ -24,4 +24,40 @@ public class ProductService {
         products.add(productModal);
         return products;
     }
+
+    public String updateProduct(int id, ProductModal productModal) {
+        for (ProductModal product : products){
+            if(product.getProductId() == id){
+                product.setProductId(productModal.getProductId());
+                product.setProductId(productModal.getProductId());
+                product.setProductName(productModal.getProductName());
+                product.setProductPrice(productModal.getProductPrice());
+
+                return "Product Update successfully";
+            }
+        }
+
+        return "No Product found with ID: " + id;
+
+    }
+
+    public String changeProductData(int id, ProductModal productModal) {
+        for(ProductModal product : products){
+            if(product.getProductId() == id){
+                product.setProductName(productModal.getProductName());
+                return "Updated Successfully";
+            }
+        }
+        return "No Product found with ID: "+ id;
+    }
+
+    public String deleteProduct(int id) {
+        for(int i=0; i<products.size(); i++){
+            if(products.get(i).getProductId() == id) {
+                products.remove(i);
+                return "Product Deleted";
+            }
+        }
+        return "No Product found with ID: " + id;
+    }
 }

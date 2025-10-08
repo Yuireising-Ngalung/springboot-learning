@@ -30,4 +30,17 @@ public class ProductModal {
     public int getProductPrice() {
         return productPrice;
     }
+
+    public void setProductPrice(int productPrice) {
+        this.productPrice = productPrice;
+    }
+
+    @Override
+    public String toString() {
+        return "ProductModal{" +
+                "productId=" + productId +
+                ", productName='" + productName + '\'' +
+                ", productPrice=" + productPrice +
+                '}';
+    }
 }
