@@ -20,9 +20,14 @@ public class ProductService {
         return products;
     }
 
-    public List<ProductModal> addProduct(ProductModal productModal) {
+//    public List<ProductModal> addProduct(ProductModal productModal) {
+//        products.add(productModal);
+//        return products;
+//    }
+
+    public String addProduct(ProductModal productModal) {
         products.add(productModal);
-        return products;
+        return "Product detail added successfully";
     }
 
     public String updateProduct(int id, ProductModal productModal) {

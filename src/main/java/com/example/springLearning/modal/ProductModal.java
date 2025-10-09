@@ -1,7 +1,13 @@
 package com.example.springLearning.modal;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+
 public class ProductModal {
     private int productId;
+
+    @NotBlank(message = "Null value not accepted")
+    @Size(min=3, max=5, message = "minimum 3 character and maximum 5 character")
     private String productName;
     private int productPrice;
 
